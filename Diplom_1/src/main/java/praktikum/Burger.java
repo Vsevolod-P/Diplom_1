@@ -40,18 +40,18 @@ public class Burger {
         return price;
     }
 
-    public String getRecipe() {
-        StringBuilder recipe = new StringBuilder(String.format("(==== %s ====)%n", bun.getName()));
+    public String getReceipt() {
+        StringBuilder receipt = new StringBuilder(String.format("(==== %s ====)%n", bun.getName()));
 
         for (Ingredient ingredient : ingredients) {
-            recipe.append(String.format("= %s %s =%n", ingredient.getType().toString().toLowerCase(),
+            receipt.append(String.format("= %s %s =%n", ingredient.getType().toString().toLowerCase(),
                     ingredient.getName()));
         }
 
-        recipe.append(String.format("(==== %s ====)%n", bun.getName()));
-        recipe.append(String.format("%nPrice: %f%n", getPrice()));
+        receipt.append(String.format("(==== %s ====)%n", bun.getName()));
+        receipt.append(String.format("%nPrice: %f%n", getPrice()));
 
-        return recipe.toString();
+        return receipt.toString();
     }
 
 }
